@@ -95,7 +95,7 @@ file_context = fs.readFileSync("./file_context.txt", 'utf8');
 const openai_ops = new OpenAIOperations(file_context, OPENAI_API_KEY, MODEL_NAME, HISTORY_LENGTH);
 
 // setup twitch bot callbacks
-/* bot.onConnected((addr, port) => {
+ bot.onConnected((addr, port) => {
     console.log(`* Connected to ${addr}:${port}`);
 
     // join channels
@@ -103,14 +103,14 @@ const openai_ops = new OpenAIOperations(file_context, OPENAI_API_KEY, MODEL_NAME
         console.log(`* Joining ${channel}`);
         console.log(`* Saying hello in ${channel}`)
     });
-});*/
+});
 
 bot.onDisconnected((reason) => {
     console.log(`Disconnected: ${reason}`);
 });
 
 // connect bot
-bot.connect(
+/* bot.connect(
     () => {
         console.log("Bot connected!");
     },
@@ -118,7 +118,7 @@ bot.connect(
         console.log("Bot couldn't connect!");
         console.log(error);
     }
-);
+);*/
 
 bot.onMessage(async (channel, user, message, self) => {
     if (self) return;
